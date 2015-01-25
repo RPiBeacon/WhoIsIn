@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Who Is In Today?</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/pure/pure.css" />
+    <link rel="stylesheet" href="../bower_components/pure/grids-responsive.css" />
+    <link rel="stylesheet" href="../bower_components/angular-chart.js/dist/angular-chart.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+</head>
+
+<body ng-app="WhoIsIn">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="pure-g text-center strip">
+        <div class="pure-u-2-5 pure-u-lg-8-24">
+          <canvas id="boysNgirls" width="200" height="170"></canvas>
+        </div>
+        <div class="pure-u-1-5 pure-u-lg-8-24">
+            <img src="https://mattia-asti.it/campus-test/images/campusLogo.png" alt="Logo" height="140" class="logo">
+        </div>
+        <div class="pure-u-2-5 pure-u-lg-8-24" ng-controller="TotalChartCtrl">
+          <p class="total-people">{{ people.length }}/5</p>
+          <canvas id="total" width="200" height="170"></canvas>
+        </div>
+    </div>
+    <div class="pure-g" ng-controller="PeopleCtrl">
+        <div class="pure-u-1-2 pure-u-lg-6-24" ng-repeat="person in people">
+            <div class="box">
+                <div class="card text-center">
+                    <div class="card-content">
+                        <img src="//placehold.it/400" alt="" class="pure-img">
+                        <h3 class="person-name">{{ person.name }}</h3>
+                        <p class="person-title">{{ person.profession }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/firebase/firebase.js"></script>
+    <script src="../bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="../bower_components/Chart.js/Chart.min.js"></script>
+    <script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
