@@ -20,10 +20,6 @@
 
   }]);
 
-  app.controller('BoysNGirlsChartCtrl', ['$scope', function($scope) {
-
-  }]);
-
 
   app.controller('PeopleCtrl', ['$scope', 'People',
     function($scope, People) {
