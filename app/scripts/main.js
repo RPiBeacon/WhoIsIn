@@ -3,7 +3,7 @@
   /* jshint devel:true */
 
   var app = angular.module('WhoIsIn', ['firebase', 'chart.js'])
-    .constant('FBURL', 'https://rpibeacon.firebaseio.com/users');
+    .constant('FBURL', 'https://rpibeacon2.firebaseio.com/users');
 
   app.factory('People', ['$firebase', 'FBURL', function($firebase, FBURL) {
     var ref = new Firebase(FBURL);
